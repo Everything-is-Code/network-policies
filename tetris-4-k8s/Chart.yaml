@@ -25,4 +25,4 @@ appVersion: "1.16.0"
 dependencies:
   - name: network-policy-library
     version: ~0.0.x
-    repository: "file://../../network-policy-library/library-chart"
+    repository: "https://everything-is-code.github.io/network-policy-library/"

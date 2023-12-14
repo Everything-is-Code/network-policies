@@ -1,6 +1,0 @@
-dependencies:
-- name: network-policy-library
-  repository: file://../../network-policy-library/library-chart
-  version: 0.0.1
-digest: sha256:40e4e78fe2561ed830b91815c1749c7d5c239ee54482b7a1bfe625fde3be8a3a
-generated: "2023-12-14T22:04:42.440072+01:00"

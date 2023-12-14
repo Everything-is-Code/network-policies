@@ -88,21 +88,22 @@ tolerations: []
 affinity: {}
 
 networkpolicy: 
-  - name: expose-policy
-    spec:
-      podselector: "{}"
-      ingress:
-        enabled: true
-        protocol: TCP
-        port: 8080
-        from:
-          enabled: false
-          podSelector: ''
-      egress: 
-        enabled: true
-        protocol: UDP
-        port: 5353
-        to:
+  name: expose-policy
+  policies:
+    - spec: 
+        podselector: "{}"
+        ingress:
           enabled: true
-          namespaceSelector: openshift-dns
+          protocol: TCP
+          port: 8080
+          from:
+            enabled: false
+            podSelector: ''
+        egress: 
+          enabled: true
+          protocol: UDP
+          port: 5353
+          to:
+            enabled: true
+            namespaceSelector: openshift-dns
   
