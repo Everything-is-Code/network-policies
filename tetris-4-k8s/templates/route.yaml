@@ -1,0 +1,14 @@
+kind: Route
+apiVersion: route.openshift.io/v1
+metadata:
+  name: {{ include "tetris-4-k8s.fullname" . }}
+spec:
+  to:
+    kind: Service
+    name: {{ include "tetris-4-k8s.fullname" . }}
+  tls:
+    termination: {{ .Values.route.termination }}
+    insecureEdgeTerminationPolicy: {{ .Values.route.ietp }}
+    destinationCACertificate: {{ .Values.route.dcacert }}
+  port:
+    targetPort: {{ .Values.route.targetport }}
