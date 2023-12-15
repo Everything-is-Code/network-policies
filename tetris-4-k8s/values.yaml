@@ -4,7 +4,7 @@
 replicaCount: 1
 
 image:
-  repository: quay.io/ilago/tetris-demo
+  repository: quay-quay-registry.apps.cluster-998fq.998fq.sandbox1937.opentlc.com/quayadmin/demo-secure-images
   pullPolicy: IfNotPresent
   # Overrides the image tag whose default is the chart appVersion.
   tag: "v1"
