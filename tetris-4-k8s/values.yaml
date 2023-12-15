@@ -89,21 +89,30 @@ affinity: {}
 
 networkpolicy: 
   name: expose-policy
-  policies:
-    - spec: 
-        podselector: "{}"
-        ingress:
-          enabled: true
-          protocol: TCP
+  enabled:
+    ingress: true
+    egress: true
+  spec:
+      podselector: "{}"
+      ingress:
+        - protocol: TCP
           port: 8080
           from:
             enabled: false
             podSelector: ''
-        egress: 
-          enabled: true
-          protocol: UDP
+        - protocol: TCP
+          port: 8081
+          from:
+            enabled: false
+            podSelector: ''
+      egress: 
+        - protocol: UDP
           port: 5353
           to:
             enabled: true
             namespaceSelector: openshift-dns
-  
+        - protocol: UDP
+          port: 53
+          to:
+            enabled: true
+            namespaceSelector: kube-dns
