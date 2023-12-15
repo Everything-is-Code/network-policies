@@ -7,7 +7,7 @@ image:
   repository: quay.io/ilago/tetris-4-k8s
   pullPolicy: IfNotPresent
   # Overrides the image tag whose default is the chart appVersion.
-  tag: "@sha256:bc8f0fb932a6f0de4f69135e2b346df455efd8c511c91927e77e1623fc751f8a"
+  tag: "latest"
 
 imagePullSecrets: []
 nameOverride: ""
